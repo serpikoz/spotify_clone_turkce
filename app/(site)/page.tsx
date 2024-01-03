@@ -23,8 +23,8 @@ export default function Home() {
             En Yeni Şarkılar!
           </h1>
         </div>
+        <div>Şarkı Listesi</div>
       </div>
-      <div>Şarkı Listesi</div>
     </div>
   );
 }
