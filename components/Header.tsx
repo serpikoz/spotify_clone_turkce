@@ -13,6 +13,7 @@ import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
 
 import Button from "./Button";
+import toast from "react-hot-toast";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -30,6 +31,12 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     const { error } = await supabaseClient.auth.signOut();
 
     router.refresh();
+
+    if (error) {
+      toast.error(error.message);
+    } else {
+      toast.success("Çıkış Yapıldı");
+    }
   };
 
   return (
@@ -138,7 +145,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                     font-medium
                   "
                 >
-                  Sign up
+                  Kayıt Ol
                 </Button>
               </div>
               <div>
@@ -146,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                   onClick={authModal.onOpen}
                   className="bg-white px-6 py-2"
                 >
-                  Log in
+                  Giriş Yap
                 </Button>
               </div>
             </>

@@ -25,7 +25,7 @@ const Modal = ({
         translate-y-[-50%] rounded-md bg-neutral-800 p-[25px] focus:outline-none
         "
         >
-          <Dialog.Title className="text-xl text-center font-bold mb*4">
+          <Dialog.Title className="text-xl text-center font-bold mb-4">
             {title}
           </Dialog.Title>
           <Dialog.Description className="mb-5 text-sm leading-normal text-center">
